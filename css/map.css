@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  margin: 0 auto;
+  width: auto;
+  border: 2px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.25em;
+}
