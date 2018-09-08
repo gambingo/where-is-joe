@@ -5,7 +5,11 @@ from .python import parse_location_data
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
-app.config.from_pyfile('config.py')
+
+try:
+    app.config.from_pyfile('config.py')
+except:
+    print("No instance specific config file found.")
 
 
 # Homepage
