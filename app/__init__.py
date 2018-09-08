@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify
-from flask_restful import Api
 
 from .python import parse_location_data
 
