@@ -19,7 +19,7 @@ $.getJSON("static/json/location.json", function(data) {
 
   // My Face
   var myFace = L.icon({
-    iconUrl: 'static/img/circle_face.png',
+    iconUrl: 'static/img/joe.gif',
 
     iconSize:     [60, 60], // size of the icon
     iconAnchor:   [30, 30], // point of the icon which will correspond to marker's location
@@ -43,7 +43,7 @@ $.getJSON("static/json/location.json", function(data) {
   //     //Nothing here
   //   }
   // });
-  // 
+  //
   // L.control.info = function(options) {
   //   return new L.Control.Info(options);
   // };
