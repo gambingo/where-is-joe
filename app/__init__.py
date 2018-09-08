@@ -23,3 +23,7 @@ def overland_listener():
     locations = request.get_json()
     parse_location_data(locations)
     return jsonify({"result": "ok"})
+
+
+if __name__ == "__main__":
+    app.run(debug=app.config["DEBUG"])
