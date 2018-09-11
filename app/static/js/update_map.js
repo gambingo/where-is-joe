@@ -32,21 +32,24 @@ $.getJSON("static/json/location.json", function(data) {
   var info = `Joe was last seen in ${city}, ${state}.`;
   console.log(info);
 
-  L.Control.Info = L.Control.extend({
-    // options: {position: 'topright']},
-    onAdd: function(map) {
-      var div = L.DomUtil.create('div', 'info');
-      div.innerHTML = info;
-      return div
-    },
-    onRemove: function(map) {
-      //Nothing here
-    }
-  });
+  if (city) {
+    L.Control.Info = L.Control.extend({
+      // options: {position: 'topright']},
+      onAdd: function(map) {
+        var div = L.DomUtil.create('div', 'info');
+        div.innerHTML = info;
+        return div
+      },
+      onRemove: function(map) {
+        //Nothing here
+      }
+    });
 
-  L.control.info = function(options) {
-    return new L.Control.Info(options);
-  };
+    L.control.info = function(options) {
+      return new L.Control.Info(options);
+    };
 
-  L.control.info({position: 'topright'}).addTo(map);
+    L.control.info({position: 'topright'}).addTo(map);
+  }
+
 });
