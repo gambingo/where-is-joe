@@ -7,7 +7,7 @@ def reverse_geocode(coordinates):
     gmaps = googlemaps.Client(key=api_key)
     coordinates = (coordinates[1], coordinates[0])
     reverse_geocode_result = gmaps.reverse_geocode(tuple(coordinates))
-    print(reverse_geocode_result)
+    # print(reverse_geocode_result)
 
     for component in reverse_geocode_result[0]["address_components"]:
         if "locality" in component["types"]:
@@ -19,8 +19,13 @@ def reverse_geocode(coordinates):
         if "country" in component["types"]:
             country = component["long_name"]
 
+    print("city: ", city)
+    print("state: ", state)
+    print("country: ", country)
+
     return city, state, country
 
 
 if __name__ == "__main__":
-    reverse_geocode([-122.14678061069175, 37.42834085786257])
+    coors = [-122.14678061069175, 37.42834085786257]
+    city, state, country = reverse_geocode(coors)
