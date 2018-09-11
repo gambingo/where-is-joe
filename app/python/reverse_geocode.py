@@ -7,7 +7,7 @@ def reverse_geocode(coordinates):
     gmaps = googlemaps.Client(key=api_key)
     coordinates = (coordinates[1], coordinates[0])
     reverse_geocode_result = gmaps.reverse_geocode(tuple(coordinates))
-    # print(reverse_geocode_result)
+    print(reverse_geocode_result)
 
     for component in reverse_geocode_result[0]["address_components"]:
         if "locality" in component["types"]:
