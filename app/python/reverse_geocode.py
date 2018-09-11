@@ -19,10 +19,6 @@ def reverse_geocode(coordinates):
         if "country" in component["types"]:
             country = component["long_name"]
 
-    print("city: ", city)
-    print("state: ", state)
-    print("country: ", country)
-
     return city, state, country
 
 
