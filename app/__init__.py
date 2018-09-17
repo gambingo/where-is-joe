@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 
-from .python import parse_location_data
+from .python import parse_location_data, call_gmaps
 
 
 app = Flask(__name__, instance_relative_config=True)
@@ -15,6 +15,7 @@ except:
 # Homepage
 @app.route("/")
 def home():
+    call_gmaps()
     return render_template("home.html")
 
 
@@ -23,6 +24,11 @@ def overland_listener():
     locations = request.get_json()
     parse_location_data(locations)
     return jsonify({"result": "ok"})
+
+
+# @app.route("/re_parse", methods=['GET', 'POST'])
+# def re_parse():
+#     call_gmaps()
 
 
 if __name__ == "__main__":

@@ -23,6 +23,6 @@ def write_location_to_json(coors, timestamp):
     'country':  country
     }
     print(data)
-    
+
     with open('app/static/json/location.json', 'w') as outfile:
         json.dump(data, outfile)
