@@ -7,6 +7,7 @@ def call_gmaps():
     with open("app/static/json/location.json") as f:
         data = json.load(f)
 
-    coordinates = (data["lng"], data["lat"])
-    print(coordinates)
-    write_location_to_json(coordinates, "")
+    if not data["state"]:
+        coordinates = (data["lng"], data["lat"])
+        print(coordinates)
+        write_location_to_json(coordinates, "")
