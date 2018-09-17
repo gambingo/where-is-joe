@@ -7,8 +7,8 @@ def call_gmaps():
     with open("app/static/json/location.json") as f:
         data = json.load(f)
 
-    try data["state"]:
-        pass
+    try:
+        data["state"]
     except KeyError:
         coordinates = (data["lng"], data["lat"])
         print(coordinates)
